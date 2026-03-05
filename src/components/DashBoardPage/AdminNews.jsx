@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-import {Box} from "@mui/material";
-import {AppBar} from "@mui/material";
-import {Toolbar} from "@mui/material";
-import {Typography} from "@mui/material";
-import {Tabs} from "@mui/material";
-import {Tab} from "@mui/material";
-import {Paper} from "@mui/material";
+import { Box } from "@mui/material";
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { Typography } from "@mui/material";
+import { Tabs } from "@mui/material";
+import { Tab } from "@mui/material";
+import { Paper } from "@mui/material";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import StoryNews from "./StoryNews";
 import DigitalNews from "./DigitalNews";
 import Editors from "./Editors";
+import AdsPanel from "./AdsPanel";
 
 function TabPanel({ children, value, index }) {
   return (
@@ -53,6 +54,7 @@ const AdminNews = () => {
           <Tab label="📰 Story News" />
           <Tab label="🎥 Digital News" />
           <Tab label="👥 Editors" />
+          <Tab label="📢 Advertisements" />
         </Tabs>
       </Paper>
 
@@ -64,6 +66,9 @@ const AdminNews = () => {
       </TabPanel>
       <TabPanel value={tab} index={2}>
         <Editors />
+      </TabPanel>
+      <TabPanel value={tab} index={3}>
+        <AdsPanel />
       </TabPanel>
     </Box>
   );
