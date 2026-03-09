@@ -30,7 +30,7 @@ const AdminNews = () => {
   const handleLogout = () => {
     localStorage.clear();
     toast.success("Logged out");
-    router.push("/login");
+    router.push("/adminlogin");
   };
 
   return (
