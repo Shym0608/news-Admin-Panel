@@ -28,8 +28,6 @@ const Editors = () => {
     try {
       const data = await cmnApi.get("/api/admin/editors");
 
-      console.log("Editors data 👉", data); // now this WILL log array
-
       setEditors(Array.isArray(data) ? data : []);
     } catch (error) {
       console.error(error);
